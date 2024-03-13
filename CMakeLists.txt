@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.11)
 
-project(SEngine)
+project(Force)
 
 include(FetchContent)
 
@@ -44,7 +44,7 @@ if(NOT glad_POPULATED)
     add_subdirectory(${glad_SOURCE_DIR} ${glad_BINARY_DIR})
 endif()
 
-add_executable(SEngine
+add_executable(Force
     #src
     src/main.cpp
 
@@ -54,22 +54,16 @@ add_executable(SEngine
     src/shader/resources/fragment.h
     src/shader/resources/fragment.h
 
-    #draw
-    src/draw/draw.h
-    src/draw/draw_triangle.cpp
-
     #camera
     src/camera/camera.h
     )
 
-target_include_directories(SEngine PUBLIC 
+target_include_directories(Force PUBLIC 
 
     src/shader/
     src/shader/resources
 
-    src/draw
-
     src/camera
     
     )
-target_link_libraries(SEngine glfw glm glad)
+target_link_libraries(Force glfw glm glad)
